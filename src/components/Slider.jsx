@@ -3,11 +3,13 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import GlobalApi from "../services/GlobalApi";
 
 const IMAGE_GLOBAL_URL = "https://image.tmdb.org/t/p/original";
-const screenWidth = window.innerWidth;
 
 function Slider() {
   const [movieList, setMovieList] = useState([]);
   const elementRef = useRef(null)
+  
+    // Calculate screen width dynamically
+    const screenWidth = window.innerWidth;
 
 
   const sliderRight = (element) =>{
@@ -30,7 +32,7 @@ function Slider() {
   };
  
   return (
-    <div className="group w-full">
+    <div className="group w-full  mt-[78px]">
       <HiChevronLeft
       onClick={()=>sliderLeft(elementRef.current)}
         size={40}
