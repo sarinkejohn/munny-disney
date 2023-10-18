@@ -7,7 +7,7 @@ const IMAGE_GLOBAL_URL = "https://image.tmdb.org/t/p/original";
 function Slider() {
   const [movieList, setMovieList] = useState([]);
   const elementRef = useRef(null)
-  
+
     // Calculate screen width dynamically
     const screenWidth = window.innerWidth;
 
@@ -52,12 +52,16 @@ function Slider() {
         /> */}
 
         {movieList.map((item, index) => (
+          <React.Fragment key={item.id}>
+          
           <img
             key={index}
             className="min-w-full max-w-[1920px]  md:h-[600px] object-cover object-right-top mr-5 rounded-md hover:border-[4px] border-gray-400 ease-in duration-150 transition-all "
             src={IMAGE_GLOBAL_URL + item.backdrop_path}
             alt={item.title}
           />
+     
+          </React.Fragment>
         ))}
 
         {/* <HiChevronRight
